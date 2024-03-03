@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <input type="number" id="numero">
+  <button onclick="tablaMultiplicar()">Calcular tabla de multiplicar</button>
+  <input type="number" id="numero">
+  <button onclick="calcularFactorial()">Calcular factorial</button>
+  <input type="text" id="frase">
+  <button onclick="contarVocales()">Contar vocales</button>
+   <script>
+     function tablaMultiplicar() {
+      
+       var numero = Number(document.getElementById("numero").value);
+   
+       var tabla = "";
+     
+       for (var i = 1; i <= 10; i++) {
+         
+         tabla += `${numero} x ${i} = ${numero * i}\n`;
+       }
+       
+       document.body.innerHTML += `<pre>${tabla}</pre>`;
+     }    
+         function calcularFactorial() {
+           var numero = Number(document.getElementById("numero").value);
+           var factorial = 1;
+           for (var i = 1; i <= 10; i++) {
+             factorial *= i;
+           }
+
+           document.body.innerHTML += `<p>El factorial de ${numero} es: ${factorial}</p>`;
+     function contarVocales() {
+
+       var frase = document.getElementById("frase").value;
+       var contador = 0;
+       frase = frase.toLowerCase();
+       for (var i = 0; i < frase.length; i++) {
+         var caracter = frase[i];
+         if (caracter === "a" || caracter === "e" || caracter === "i" || caracter === "o" || caracter === "u") {
+           contador++;
+         }
+       }
+       document.body.innerHTML += `<p>La frase "${frase}" tiene ${contador} vocales.</p>`;
+     }
+   }</script>
+  <script src="script.js"></script>
+</body>
+
+</html>
